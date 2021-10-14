@@ -14,6 +14,7 @@ function getDateTime() {
 
         let hours = today.getHours()
         let minutes = today.getMinutes()
+        let seconds = today.getSeconds()
         let postTime
         let time
 
@@ -30,13 +31,17 @@ function getDateTime() {
             hours = '12'
         }
 
+        if(seconds <= 9){
+            seconds = "0" + seconds
+        }
+
         // Get minutes in double digits at all times
         if (minutes < 10) {
             minutes = "0" + minutes
         }
 
         // Set the time to how it should be displayed in html
-        time = hours + ":" + '</div>' + '<div id="dateTime">' + minutes + " " + postTime + '</div>'
+        time = hours + ":" + '</div>' + '<div id="dateTime">' + minutes + ":" + seconds+ " "+ postTime + '</div>'
 
         return time
     }
@@ -87,7 +92,7 @@ function showGreeting() {
     document.getElementById("greeting").innerHTML = getDateTime()
 
     // Recursion to get current date without refreshing the page (Gets the time every two seconds)
-    setTimeout(showGreeting, 2000)
+    setTimeout(showGreeting, 1000)
 }
 
 // For google search operation

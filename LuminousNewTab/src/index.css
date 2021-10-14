@@ -51,11 +51,16 @@
 	border: solid 1px #f0f1f1;
 	border-radius: 4px;
 	color: #3c4043;
+	font-weight: bold;
+	font-family: 'Poppins', sans-serif;
 	padding-left: 12px;
 	padding-right: 12px;
 	cursor: pointer;
 }
 
+#searchButton:hover, #openGoogle:hover{
+	background-color: #d6d8d8;
+}
 #weatherInfo {
 	margin-left: 30px;
 	margin-top: 25px;
